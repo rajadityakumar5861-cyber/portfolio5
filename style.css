@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #020617;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* 🌌 CANVAS BACKGROUND */
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: brightness(0.7);
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+nav a {
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+nav a.active {
+    color: #3b82f6;
+}
+
+/* HERO */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.left h1 {
+    font-size: 40px;
+}
+
+/* IMAGE */
+.center img {
+    width: 300px;
+    animation: fadeIn 2s;
+}
+
+/* BUTTON */
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #2563eb;
+    border: none;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 10px #2563eb;
+}
+
+button:hover {
+    box-shadow: 0 0 20px #2563eb;
+}
+
+/* GLASS EFFECT */
+.tab {
+    display: none;
+    padding: 40px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    margin: 20px;
+    border-radius: 10px;
+    animation: fadeIn 0.5s;
+    position: relative;
+    z-index: 1;
+}
+
+.active {
+    display: block;
+}
+
+/* SKILLS */
+.skill {
+    margin: 20px 0;
+}
+
+.bar {
+    background: #333;
+    height: 8px;
+}
+
+.bar div {
+    height: 8px;
+    background: #2563eb;
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    background: #111;
+    padding: 30px;
+    flex: 1;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background: #2563eb;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* MOBILE */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+}
+
+@media (max-width: 768px) {
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .center img {
+        width: 200px;
+        margin: 20px 0;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        background: #111;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 10px;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+}
